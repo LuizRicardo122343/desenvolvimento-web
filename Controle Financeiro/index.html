@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <h2>Controle Financeiro</h2>
+        <p>Entradas: R$ <span id="entradas">0.00</span></p>
+        <p>Saídas: R$ <span id="saidas">0.00</span></p>
+        <p>Total: R$ <span id="total">0.00</span></p>
+
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="number" id="valor" placeholder="Valor">
+        <select id="tipo">
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+        </select>
+        <button onclick="adicionar()">Incluir</button>
+        <button onclick="gerarPDF()">Baixar PDF</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabela"></tbody>
+        </table>
+    </div>
+</body>
+</html>
